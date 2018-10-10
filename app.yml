@@ -1,0 +1,11 @@
+---
+
+- hosts: app
+  tasks:
+  - name: Install httpd service
+    yum:
+      name: httpd
+      state: latest
+  - name: Restart httpd
+    service: name=httpd state=started  
+
