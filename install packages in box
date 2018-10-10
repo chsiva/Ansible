@@ -41,4 +41,4 @@ copy anssrv publickey
 In anssrv ssh 10.10.0.11  # checking connected with client
 ssh 10.10.0.12  # checking connected with client 
 ------------------------------------------------------ 
-telnet ip 80
+telnet ip 80 # checks if client listening to port 80
