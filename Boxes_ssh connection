@@ -6,15 +6,14 @@ cd
 ssh-keygen 
 cd .ssh 
 cat id_rsa.pub 
--------- generate ssh key in client1----------------
-vagrant up client2
-vagrant ssh client2
-sudo su 
-cd ssh-keygen
+-------- copy public key in client---------------
+vagrant up client
+vagrant ssh client
+sudo su
 cd .ssh 
 vi authorized_keys 
-chmod 600 authorized_keys
 paste anssrv publickey
+chmod 600 authorized_keys
 edit in /etc/ssh/sshd_config
 PasswordAuthentication yes
 --------------------------- 
