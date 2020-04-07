@@ -8,7 +8,7 @@
  ansible --version        # to check Ansible version
  vi /etc/ansible/hosts    # inventory
  [app]                    # environment
- 10.0.0.0 ansible webserver -m ping                     # hosts
+ 10.10.0.11 ansible_user=vagrant  # hosts
  ansible app -m ping      # ping hosts
  
  
