@@ -1,11 +1,18 @@
 -----------install required packages-------------
  yum install epel-release # packages repository
  yum install ansible
+ 
+ 
+ 
+ ------------------------------------------------------
  ansible --version        # to check Ansible version
  vi /etc/ansible/hosts    # inventory
  [app]                    # environment
- ip's                     # hosts
+ 10.0.0.0 ansible webserver -m ping                     # hosts
  ansible app -m ping      # ping hosts
+ 
+ 
+ 
 ----------------sample playbook-------------------
 mkdir ansible-playbook 
 cd ansible-playbook/ 
