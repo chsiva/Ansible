@@ -18,3 +18,25 @@ mkdir ansible-playbook
 cd ansible-playbook/ 
 vi app.yml 
 ansible-playbook app.yml
+
+
+-----
+
+sudo vi /etc/ansible/hosts
+
+[apache]
+50.112.133.205 ansible_ssh_user=centos
+54.202.7.87 ansible_ssh_user=centos
+
+# [apache:vars]
+# ansible_user=centos
+# ansible_ssh_private_key_file=/home/centos/test_key.pem
+
+
+ansible all -m ping 
+
+ansible-playbook ec2.yml --private-key=/home/centos/test_key.pem -u centos
+
+-> Note:
+inbound:
+SSH TCP  22  0.0.0.0/0
