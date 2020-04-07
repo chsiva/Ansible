@@ -1,0 +1,18 @@
+AWS CLI installing
+
+
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" (download get-pip.py)  # curl- to get response
+sudo python get-pip.py   #  executing file or get-pip.p
+sudo pip install awscli  # install awscli
+
+--------------------------------------------------------------------------------------------------------
+aws configure
+
+AWS Access Key ID [None]:
+AWS Secret Access Key [None]:
+Default region name [None]: us-east-1 
+Default output format [None]: json
+
+-----------------------------------------------------------------------------------------------------------
+
+pem file also required to ssh into vm or ec2
