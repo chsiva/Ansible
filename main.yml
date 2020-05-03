@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+    - name: check ansible version
+      command: ansible --version
