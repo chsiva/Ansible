@@ -3,10 +3,11 @@
 - hosts: localhost
   tasks:
   - name: Install httpd service
-    command: whoami
+    command: pwd
     register: out
     
-  - debug:
+  - name: print output
+    debug:
       var: out
 #     yum:
 #       name: httpd
