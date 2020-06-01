@@ -9,6 +9,9 @@
   - name: printing on schedule
     debug:
       var: out
+      
+      
+      
 #     yum:
 #       name: httpd
 #       state: latest
