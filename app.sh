@@ -1,2 +1,2 @@
 #! /bin/bash
-whoami
+yum install -y ansible
