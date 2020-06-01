@@ -7,7 +7,7 @@
     command: pwd
     register: out
     
-  - name: print output
+  - name: printing on schedule
     debug:
       var: out
 #     yum:
