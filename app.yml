@@ -4,6 +4,10 @@
   tasks:
   - name: Install httpd service
     command: whoami
+    register: out
+    
+  - debug:
+      var: out
 #     yum:
 #       name: httpd
 #       state: latest
