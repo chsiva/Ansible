@@ -3,7 +3,7 @@
 #https://stackoverflow.com/questions/25341198/javax-mail-authenticationfailedexception-is-thrown-while-sending-email-in-java
 - hosts: localhost
   vars:
-    contents: "{{ lookup('file', '/vars/secrets.yml') }}"
+    contents: "{{ lookup('file', '/vars/secrets.txt') }}"
   tasks:   
     - debug: msg="the value of foo.txt is {{ contents }}"
 #   - name: get ec2 in my account
