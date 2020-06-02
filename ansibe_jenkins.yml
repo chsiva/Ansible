@@ -1,9 +1,0 @@
----
-- hosts: localhost
-  tasks:
-    - name: check ansible version
-      command: ansible --version
-      register: out
-    
-    - debug:
-        msg: "{{ out }}"
