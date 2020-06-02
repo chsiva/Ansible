@@ -2,22 +2,21 @@
 #https://www.lenar.io/jenkins-schedule-build-periodically/
 #https://stackoverflow.com/questions/25341198/javax-mail-authenticationfailedexception-is-thrown-while-sending-email-in-java
 - hosts: localhost
-  vars:
-    contents: "{{ lookup('file', '/vars/secrets.txt') }}"
-  tasks:   
-    - debug: msg="the value of foo.txt is {{ contents }}"
-#   - name: get ec2 in my account
-#     ec2_instance_info:
-#       aws_access_key: AKIAQBNBIKNANMIA5ZEK
-#       aws_secret_key: "{{ secret_key }}"
-#       instance_ids:
-#         - i-0ac3c44d07f736b99
-#       region: us-east-2
-#     register: ec2_info
+  tasks:
+    - include_vars: secrets.yml 
     
-#   - name: describe the ec2 in detail
-#     debug:
-#       var: ec2_info
+    - name: get ec2 in my account
+      ec2_instance_info:
+        aws_access_key: AKIAQBNBIKNANMIA5ZEK
+        aws_secret_key: "{{ key }}"
+        instance_ids:
+          - i-0ac3c44d07f736b99
+        region: us-east-2
+      register: ec2_info
+
+    - name: describe the ec2 in detail
+      debug:
+        var: ec2_info
       
       
       
