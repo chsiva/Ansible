@@ -15,9 +15,9 @@
 #       region: us-east-2
 #     register: ec2_info
     
-  - name: describe the ec2 in detail
-    debug:
-      var: ec2_info
+#   - name: describe the ec2 in detail
+#     debug:
+#       var: ec2_info
       
       
       
