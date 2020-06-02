@@ -7,8 +7,8 @@
     
     - name: get ec2 in my account
       ec2_instance_info:
-        aws_access_key: AKIAQBNBIKNANMIA5ZEK
-        aws_secret_key: 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
+        aws_access_key: AKIAQBNBIKNAPXYNYIFO
+        aws_secret_key: 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
         instance_ids:
           - i-0ac3c44d07f736b99
         region: us-east-2
