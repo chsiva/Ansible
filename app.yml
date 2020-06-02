@@ -6,7 +6,7 @@
     - debug: msg="{{ lookup('env','key') }} is an environment variable"
     - name: get ec2 in my account
       ec2_instance_info:
-        aws_access_key: AKIAQBNBIKNAHS3EUUXZ
+        aws_access_key: "{{ lookup('env','id') }}"
         aws_secret_key: "{{ lookup('env','key') }}"
         instance_ids:
           - i-0ac3c44d07f736b99
