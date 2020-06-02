@@ -7,6 +7,7 @@
     ec2_instance_info:
       instance_ids:
         - i-0ac3c44d07f736b99
+      region: us-east-1
     register: ec2_info
     
   - name: describe the ec2 in detail
