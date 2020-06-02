@@ -1,0 +1,86 @@
+ - name: get instance id
+      ec2_instance_facts:
+        region: us-east-1
+      register: instance_info
+
+    - set_fact:
+        ip_info: "{{ instance_info.instances | map(attribute='instance_id') | list }}"
+        
+-----------------------------------------------------------------------------------------------------------
+
+- name: filter default sg 
+  ec2_group_facts:
+    filters:
+      group-name: default
+    region: us-east-1
+  register: sg_info
+  
+- name: set group name of the resource
+  set_fact:
+    sg_name: []
+
+- name: filter group name of the resource
+  set_fact:
+    sg_name: "{{ (sg_info | json_query('security_groups[*].group_name')) }}"
+
+--------------------------------------------------------------------------------------------------------------------  
+  
+  tasks:
+    - rds_instance_facts:
+      register: rds_info
+
+    - debug:
+        msg: "{{ rds_info }}"
+
+    - set_fact:
+        identity: []
+
+    - name: 
+      set_fact:
+        identity: "{{ identity }} + [ '{{ item.db_subnet_group.db_subnet_group_description }}' ]"
+      with_items: "{{ rds_info.instances }}"
+
+    - debug:
+        msg: "{{ identity }}"
+  --------------------------------------------------------------------------------------------------------------------------
+
+    - set_fact:
+        identity1: []
+
+    - set_fact:
+        identity1: "{{ identity1 }} + [ '{{ item.file_system_id }}' ]"
+      with_items: "{{ efs_info.ansible_facts.efs }}"
+
+    - debug:
+        msg: "{{ identity1 }}"
+  ---------------------------------------------------------------------------------------------------------------------------
+  - set_fact:
+        target_to_query: []
+
+    - name: build list of EC2 instances to tag
+      set_fact:
+        target_to_query: "{{  (efs_info | json_query('ansible_facts.efs[*].mount_targets[*].mount_target_id')) |replace('[[', '[') | replace(']]', ']') |replace('[[', '[') |replace('[[', '[') }}"
+
+
+    - debug:
+        msg: "{{ target_to_query }}"
+  -----------------------------------------------------------------------------------------------------------------------------------
+  - set_fact:
+          identity1: []
+
+      - name: build list of EC2 instances to tag
+        set_fact:
+          identity1: "{{ identity1 }} + [ '{{ item }}' ]"
+        with_items: "{{ efs_info.ansible_facts.efs.0.mount_targets.0.file_system_id }}"
+
+     - debug:
+         msg: "{{ identity1 }}"
+  ----------------------------------------------------------------------------------------------------------------------------------
+  - set_fact:
+        list_master_ip: []    ---- from inventory
+        
+    - set_fact: 
+        list_master_ip: "{{ list_master_ip }} + [ '{{ item }}' ]"
+      with_items: "{{ groups['tag_instancetype_master'] }}"
+-----------------------------------------------------------------------------------------------------------------------------------
+db_arn: "{{ (describe_db_instances_ARN.stdout | from_json) }}"
