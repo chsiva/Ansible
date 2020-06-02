@@ -3,7 +3,7 @@
 #https://stackoverflow.com/questions/25341198/javax-mail-authenticationfailedexception-is-thrown-while-sending-email-in-java
 - hosts: localhost
   tasks:
-    - include_vars: secrets.yml 
+    #- include_vars: secrets.yml 
     
     - name: get ec2 in my account
       ec2_instance_info:
