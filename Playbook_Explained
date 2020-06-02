@@ -1,0 +1,44 @@
+- name: This is a Play    # Naming
+  hosts: web-servers      # Host selection
+  ---------------------------------------------------------------------------------------------------------------------------
+  remote_user: mberube    ---
+  become: yes             --- # Arguments
+  gather_facts: no        --- 
+  ---------------------------------------------------------------------------------------------------------------------------
+  vars:                   # Variables
+    state: present   
+  --------------------------------------------------------------------------------------------------------------------------
+  tasks:                  # tasks
+    - name: Install Apache
+      yum: name={{ item }} state={{ state }} ----------
+      with_items:                            ----------#  Loops
+        - httpd                              ----------#
+        - php                                ----------
+ ----------------------------------------------------------------------------------------------------------------------------
+      tags:
+         - packages                          --------- # Example of tag usage
+      notify: Restart Apache   ----------------
+    handlers:                  -----------------# 
+      - name: Restart Apache   -----------------# handlers(Only run if task has a “changed” status)
+        service: name=httpd state=restarted ----
+  ---------------------------------------------------------------------------------------------------------------------------      
+  Registering task outputs for debugging or other purposes
+  - shell: httpd -v|grep version|awk '{print $3}'|cut -f2 -d'/'
+    register: result
+  - debug: var=result
+  ---------------------------------------------------------------------------------------------------------------------------
+  Conditional Tasks
+  tasks:
+    - name: install Apache
+      yum: name=httpd state=installed
+      when: ansible_os_family == "RedHat"
+ ----------------------------------------------------------------------------------------------------------------------------
+ Apply a condition to multiple tasks at once
+ - block:
+   - yum: name={{ item }} state=installed
+     with_items:
+       - httpd
+       - memcached
+   - service: name=bar state=started enabled=True
+   when: ansible_distribution == 'CentOS
+ -------------------------------------------------------------------------------------------------------------------------
