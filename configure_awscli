@@ -1,11 +1,19 @@
 AWS CLI installing
 
+Linux
 
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" (download get-pip.py)  # curl- to get response
 sudo python get-pip.py   #  executing file or get-pip.p
 sudo pip install awscli  # install awscli
 
 --------------------------------------------------------------------------------------------------------
+Macos
+
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+------------------------------------------------------------------------------------------------
+aws configure
 aws configure
 
 AWS Access Key ID [None]:
