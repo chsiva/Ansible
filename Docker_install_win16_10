@@ -1,11 +1,12 @@
 Goto -> Service Manager -> Manage -> Add roles & Features -> Features -> check container and install -> Restart PC
 
 #https://forums.docker.com/t/unable-to-find-package-provider-power-shell-error/26075/4
+#https://stackoverflow.com/questions/16657778/install-nuget-via-powershell-script/26421187
 #Import-Packageprovider -Name DockerMsftProvider
 #Import-Packageprovider -Name NuGet
 
 Step1: Run Powershell with Admin rights
-step2: Type the below PowerShell security protocol command for TLS12:
+step2: Type the below "PowerShell security protocol command for TLS12:"
        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Step3: Installing NuGet (NuGet Gallery is the central package repository used by all package authors and consumers)
        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force  or Install-PackageProvider -Name NuGet -Scope CurrentUser
