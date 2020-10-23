@@ -14,3 +14,13 @@ Restart-Computer -Force
  docker version
  docker info
 -------------------------------------------
+
+Uninstall-Module dockerprovider
+
+Uninstall-package docker
+
+or for windows container:
+
+Uninstall-Module DockerMsftProvider
+
+Uninstall-package docker
