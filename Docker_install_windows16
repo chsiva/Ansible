@@ -1,3 +1,5 @@
+Goto -> Service Manager -> Manage -> Add roles & Features -> Features -> check container and install -> Restart PC
+
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name DockerMsftProvider -Force
 Install-Package -Name docker -ProviderName DockerMsftProvider -Force
@@ -9,4 +11,3 @@ Restart-Computer -Force
  docker version
  docker info
 -------------------------------------------
-
