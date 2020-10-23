@@ -15,12 +15,9 @@ Restart-Computer -Force
  docker info
 -------------------------------------------
 
-Uninstall-Module dockerprovider
-Uninstall-package docker
-
-or for windows container:
-Uninstall-Module DockerMsftProvider
-Uninstall-package docker
+uninstall-Module DockerMsftProvider
+Go to the path where Docker is installed 
+Remove-Item Docker
 ---------------------------------------------
 
 on Windows 10 follow below links
