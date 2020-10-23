@@ -16,11 +16,14 @@ Restart-Computer -Force
 -------------------------------------------
 
 Uninstall-Module dockerprovider
-
 Uninstall-package docker
 
 or for windows container:
-
 Uninstall-Module DockerMsftProvider
-
 Uninstall-package docker
+---------------------------------------------
+
+on Windows 10 follow below links
+https://docs.docker.com/docker-for-windows/install/
+https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+
