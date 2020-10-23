@@ -7,5 +7,6 @@ Restart-Computer -Force
  start-service docker
  Get-service docker
  docker version
+ docker info
 -------------------------------------------
 
