@@ -1,5 +1,8 @@
 Goto -> Service Manager -> Manage -> Add roles & Features -> Features -> check container and install -> Restart PC
 
+https://forums.docker.com/t/unable-to-find-package-provider-power-shell-error/26075/4
+
+
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name DockerMsftProvider -Force
 Install-Package -Name docker -ProviderName DockerMsftProvider -Force
