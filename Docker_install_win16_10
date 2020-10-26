@@ -32,3 +32,27 @@ on Windows 10 follow below links
 https://docs.docker.com/docker-for-windows/install/
 https://hub.docker.com/editions/community/docker-ce-desktop-windows/
 
+--------------------------------------------
+
+ -----------
+ Get-service docker
+ docker ps
+ docker ps --filter "status=exited"
+ docker ps -a
+ docker run hello-world
+ docker run tutum/hello-world
+ Install-WindowsFeature containers
+ docker ps -a
+ Install-PackageProvider ContainerImage -Force
+ Install-PackageProvider containerImage -Force
+ Install-PackageProvider ContainerImage -Force
+ [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+ Install-PackageProvider ContainerImage -Force
+ Find-ContainerImage
+ clear
+ Find-ContainerImage
+ Find ContainerImage
+ Find-ContainerImage
+ docker ps -a
+ Find-ContainerImage
+
