@@ -33,5 +33,6 @@ simple one line command used to perform a certain task ( ansible-playbook <playb
 
 # Ansible shell vs Command module.
 Shell: It is almost exactly like the command module but runs the command through a shell (/bin/sh) on the remote node.
+
 Command: The command(s) will not be processed through the shell, so variables like $HOME and operations like "<", ">", "|", ";" and "&" will not work. Use the shell          module if you need these features.
 
