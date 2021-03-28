@@ -2,10 +2,25 @@
  yum install epel-release # packages repository
  yum install ansible
  
- 
- 
  ------------------------------------------------------
  ansible --version        # to check Ansible version
+ 
+sudo su 
+cd 
+ssh-keygen 
+cd .ssh 
+cat id_rsa.pub 
+-------- copy public key in client---------------
+ssh to the client machine
+sudo su
+cd .ssh 
+vi authorized_keys 
+paste anssrv publickey
+chmod 600 authorized_keys
+--------------------------- 
+
+
+In anssrv ssh vagrant@10.10.0.11  # checking connected with client
  vi /etc/ansible/hosts    # inventory
  [app]                    # environment
  10.10.0.11 ansible_user=vagrant  # hosts
