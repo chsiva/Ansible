@@ -35,6 +35,13 @@ simple one line command used to perform a certain task ( ansible-playbook <playb
 Shell: It is almost exactly like the command module but runs the command through a shell (/bin/sh) on the remote node.
 
 Command: The command(s) will not be processed through the shell, so variables like $HOME and operations like "<", ">", "|", ";" and "&" will not work. Use the shell          module if you need these features.
+  
+# Yaml Syntax points to remember"
+  All YAML files (regardless of their association with Ansible or not) can optionally begin with --- and end with ... . This is part of the YAML format and indicates the start and end of a document.
+  https://github.com/chsiva/AWS/blob/master/ec2_provision.yml
+  
+  https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+  
 
 # Playbook vs Tasks vs Roles
 
