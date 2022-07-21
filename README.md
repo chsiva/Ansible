@@ -12,10 +12,14 @@ This repo contains the configuration steps, provisioning VMs, ssh connection b/w
 http://people.redhat.com/mlessard/qc/presentations/Mai2016/AnsibleWorkshopNA.pdf (Detailed introduction)
 
 # What you did with Ansible?
-1. I worked on Ansible verion 2.7/2.8 where I developed palybooks from scratch to provion the services on cloud.
-2. utilized ansible for automation & configuing services based on roles, patching servers, removing dead computer objects, adding users/permissions, copying files      from server-server/buckets in diff region.
-3. worked with Ansible-Vault to Encrypt sshkeys/passwords.
-4. Also worked on Ansible Towers (Dashboard, GUI is very user friendly..we can see Jobs, Templates, Rocket Chip, User.group permissions, Inventories, Variables).
+1. I worked on Awith various modules that comprise of cloud & shell .
+2. Ansible verion 2.7/2.8 where I developed palybooks from scratch to provision the services on AWS cloud ans used shell modules while working on Linux based systems.
+3. Apart of provisioning, I have utilized ansible for automation & configuing services based on roles, patching servers, removing dead computer objects, adding users/permissions, copying files      from server-server/buckets in diff region.
+4. Also, worked with Ansible-Vault for Encrypt/decryption over the servers when dealing with sensitive data like sshkeys/passwords.
+5. Good exposure with Ansible Towers Dashboard which is an GUI is very user friendly..involved in integrating the source code (gitHub) where playbook resides, creating Jobs, Templates, setting up User.group permissions, Inventories, Variables).
+6. Once setup is done on tower, I have to ensure one push of a button deployment.
+
+Rocket chip
 
 # Ansible Major Components
 Ansible Controller Machine, Inventories, Modules, Variables,Facts,Plays,Playbooks,Configuration files, roles, tasks.
