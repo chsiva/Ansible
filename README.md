@@ -36,3 +36,25 @@ Shell: It is almost exactly like the command module but runs the command through
 
 Command: The command(s) will not be processed through the shell, so variables like $HOME and operations like "<", ">", "|", ";" and "&" will not work. Use the shell          module if you need these features.
 
+# Playbook vs Tasks vs Roles
+
+1. Playbook: organize and launch tasks. Playbook will be contain everything for ex: roles, tasks
+
+2. Task: To do stuff like  a step that execute based on the inputs given. see example below
+- name: Update db servers
+  hosts: databases
+  remote_user: root
+
+  tasks:
+  - name: Ensure postgresql is at the latest version
+    ansible.builtin.yum:
+      name: postgresql
+      state: latest
+
+3. Roles: Role is a set of tasks and additional files to configure host to serve for a certain role and can be re usable by putting the functionality into generalized "libraries" that can be then used in any playbook as needed. For example see below
+---
+- hosts: webservers <- this group of hosts defined in /etc/ansible/hosts, databases and mail_servers in example from your question
+  roles: <- this is list of roles to assign to these hosts
+     - common
+     - webservers
+
