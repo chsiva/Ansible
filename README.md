@@ -51,8 +51,8 @@ Command: The command(s) will not be processed through the shell, so variables li
       name: postgresql
       state: latest
 
-3. Roles: Role is a set of tasks and additional files to configure host to serve for a certain role and can be re usable by putting the functionality into generalized "libraries" that can be then used in any playbook as needed. For example see below
----
+3. Roles: 
+Role is a set of tasks and additional files to configure host to serve for a certain role and can be re usable by putting the functionality into generalized "libraries" that can be then used in any playbook as needed. For example see below
 - hosts: webservers
   roles: this is list of roles to assign to these hosts
      - common
