@@ -12,7 +12,7 @@ This repo contains the configuration steps, provisioning VMs, ssh connection b/w
 http://people.redhat.com/mlessard/qc/presentations/Mai2016/AnsibleWorkshopNA.pdf (Detailed introduction)
 
 # What you did with Ansible?
-1. I worked on Awith various modules that comprise of cloud & shell .
+1. I worked on with various modules that comprise of both cloud & shell modules.
 2. Ansible verion 2.7/2.8 where I developed palybooks from scratch to provision the services on AWS cloud ans used shell modules while working on Linux based systems.
 3. Apart of provisioning, I have utilized ansible for automation & configuing services based on roles, patching servers, removing dead computer objects, adding users/permissions, copying files      from server-server/buckets in diff region.
 4. Also, worked with Ansible-Vault for Encrypt/decryption over the servers when dealing with sensitive data like sshkeys/passwords.
