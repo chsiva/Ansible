@@ -69,3 +69,6 @@ Role is a set of tasks and additional files to configure host to serve for a cer
      - common
      - webservers
 Note: webservers - this group of hosts defined in /etc/ansible/hosts, databases and mail_servers in example from your question
+
+# Ansible-vault
+https://www.golinuxcloud.com/ansible-vault-example-encrypt-string-playbook/
