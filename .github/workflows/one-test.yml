@@ -7,8 +7,10 @@ on:
   paths:
     - 'sample/**'
     
-# jobs:
-#   my_first_job:
-#     name: My first job
-#   my_second_job:
-#     name: My second job
+jobs:
+  one-latest:
+    name: test the scenario
+    runs-on: ububtu-latest
+    steps:
+      - name: Checkout
+        uses: actions/Checkout@master
