@@ -2,7 +2,8 @@
 name: one-test
 on:
   push: 
-  branches: [ master ]
+  branches:
+    - !develop
   paths:
     - 'sample/**'
     
