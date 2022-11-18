@@ -2,10 +2,10 @@
 name: one-test
 on:
   push: 
-  branches:
-    - master
-  paths:
-    - 'sample/**'
+    branches:
+      - master
+    paths:
+      - 'sample/**'
     
 jobs:
   one-latest:
