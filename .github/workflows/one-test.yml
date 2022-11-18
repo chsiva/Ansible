@@ -7,8 +7,8 @@ on:
   paths:
     - 'sample/**'
     
-jobs:
-  my_first_job:
-    name: My first job
-  my_second_job:
-    name: My second job
+# jobs:
+#   my_first_job:
+#     name: My first job
+#   my_second_job:
+#     name: My second job
