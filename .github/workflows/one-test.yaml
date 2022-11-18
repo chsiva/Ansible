@@ -1,0 +1,8 @@
+---
+name: one-test
+on:
+  push: 
+  branches:
+  - master
+  paths:
+    - 'sample/**'
