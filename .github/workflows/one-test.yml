@@ -1,5 +1,5 @@
 ---
-name: one-test
+name: one-test  # display as workflowname
 on:
   push: 
     branches:
@@ -8,7 +8,7 @@ on:
       - 'sample/**'
     
 jobs:
-  one-latest:
+  one-latest: # identifier should have  no space but can use hiphen "-"
     name: test the scenario
     runs-on: ububtu-latest
     steps:
